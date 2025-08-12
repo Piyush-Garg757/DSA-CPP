@@ -1,0 +1,1 @@
+// Ek sorted array mein se duplicates delete karne hain aur usi array ko modify karna hai to delete ke baad saare unique elements ko sorted way mein store karna hai usi artay mein aur extra spaces mein 0 fill karna hai   aur finally kitne unique elements hain vo return karna hai
