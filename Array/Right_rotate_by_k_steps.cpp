@@ -17,10 +17,7 @@ int main()
     k %= n;
     for (int i = 0; i < n; i++)
     {
-        if (i - k < 0)
-            a[i] = a[n - i - k];
-        else
-            a[i] = a[i - k];
+        a[i] = a[(i + k) % n];
     }
     for (int i = 0; i < n; i++)
     {
