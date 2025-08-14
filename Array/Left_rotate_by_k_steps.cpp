@@ -18,7 +18,7 @@ int main()
     int temp[n];
     for (int i = 0; i < n; i++)
     {
-        temp[(i + k) % n] = a[i];
+        temp[i] = a[(i + k) % n];
     }
     for (int i = 0; i < n; i++)
     {
@@ -31,4 +31,5 @@ int main()
     cout << "\n";
     return 0;
 }
+
 // But sabse zyada optimal approach vahi hia ki 3 baar reverse karo
