@@ -33,5 +33,5 @@ int main()
     }
     return 0;
 }
-// TC - O(nlogn) or O(n^2) SC - O(n)
+// TC - O(n) or O(n^2) SC - O(n)
 // optimal vahi 2 pointer approach hai jo sliding window approach kehlata hai but vo tab hai jab ya to array sorted ho ya fir array sorted nahi hai to bas yes ya no pucha ho index ouche honge to dikkat hai kuki sort karna pdega iss approach mein aur us se index galat ho jayenge to dupllicate array banani padegi to vo opimal nahi rahega
