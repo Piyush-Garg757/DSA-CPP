@@ -47,3 +47,4 @@ int main()
 }
 
 // aise hi similar way mein 3rd variety kar sakte hain
+f
