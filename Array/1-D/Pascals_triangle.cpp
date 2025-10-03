@@ -28,3 +28,22 @@ int main()
 // 2nd variety aise hi ho jayegi ek for loop lagake bas column ki vale change hoti jayegi usmein
 // but usmein thoda optimise kar sakte hain
 // upar vale sol mein fact ki jis defination se kaam kiya hai use thoda modify karenge to ye logic mil jayega
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int r, ans = 1;
+    cout << "Enter the row number\n";
+    cin >> r;
+    cout << "1 ";
+    for (int i = 1; i < r; i++)
+    {
+        ans *= (r - i);
+        ans /= i;
+        cout << ans << " ";
+    }
+    return 0;
+}
+
+// aise hi similar way mein 3rd variety kar sakte hain
