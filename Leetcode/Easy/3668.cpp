@@ -16,6 +16,7 @@ Output: [5,2]
 Explanation:
 The finishing order is [1, 4, 5, 3, 2]. Therefore, the finishing order of your friends is [5, 2]*/
 
+// brute force to vahi O(n^2)
 class Solution
 {
 public:
