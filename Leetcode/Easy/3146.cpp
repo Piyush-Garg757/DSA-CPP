@@ -1,0 +1,29 @@
+/*Permutation Difference between Two Strings
+Example 1:
+Input: s = "abc", t = "bac"
+Output: 2
+Explanation:
+For s = "abc" and t = "bac", the permutation difference of s and t is equal to the sum of:
+The absolute difference between the index of the occurrence of "a" in s and the index of the occurrence of "a" in t.
+The absolute difference between the index of the occurrence of "b" in s and the index of the occurrence of "b" in t.
+The absolute difference between the index of the occurrence of "c" in s and the index of the occurrence of "c" in t.
+That is, the permutation difference between s and t is equal to |0 - 1| + |1 - 0| + |2 - 2| = 2*/
+class Solution
+{
+public:
+    int findPermutationDifference(string s, string t)
+    {
+        unordered_map<char, int> mpp;
+        for (int i = 0; i < t.size(); i++)
+        {
+            mpp[t[i]] = i;
+        }
+        int ans = 0;
+        for (int i = 0; i < s.size(); i++)
+        {
+            ans += abs(i - mpp[s[i]]);
+        }
+        return ans;
+    }
+};
+// TC - O(n)  SC - O(n)
