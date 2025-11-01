@@ -3,6 +3,7 @@
     "xtree": "cpp",
     "tuple": "cpp",
     "utility": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "xstring": "cpp"
   }
 }
