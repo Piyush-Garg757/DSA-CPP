@@ -62,3 +62,129 @@ int main()
     return 0;
 }
 // TC - O(n)  SC - O(1)
+
+// Optimal sol 2
+/*
+XOR Method – Steps with Example
+
+Array ke saare elements ka XOR nikaalo
+xr = 1 ^ 2 ^ 2 ^ 4
+
+1 se n tak ke numbers ka XOR karo
+xr = (1 ^ 2 ^ 2 ^ 4) ^ (1 ^ 2 ^ 3 ^ 4)
+
+Same numbers cancel ho jaate hain
+xr = 3 ^ 2
+(yaani missing ^ repeating)
+xr = 3 ^ 2 = 1
+
+Binary:
+3 = 011
+2 = 010
+xr = 001
+xr ka rightmost set bit nikaalo
+→ bit = 1
+
+Divide into 2 groups (using that bit)
+
+Group 1 (bit set)
+Array elements:
+1 (001) ✔
+Numbers 1..n:
+1 (001) ✔
+3 (011) ✔
+XOR:
+1 ^ 1 ^ 3 = 3
+
+Group 2 (bit not set)
+Array elements:
+2, 2, 4
+Numbers 1..n:
+2, 4
+XOR:
+2 ^ 2 ^ 4 ^ 2 ^ 4 = 2
+
+Result after grouping
+Do values milti hain:
+3
+2
+
+Identify which is missing / repeating
+Array check:
+2 array me present hai → repeating
+3 array me nahi hai → missing
+
+Final Answer
+Repeating = 2
+Missing = 3
+
+Complexity
+Time: O(n)
+Space: O(1)*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter size of array\n";
+    cin >> n;
+    vector<int> a(n);
+    cout << "Enter elements\n";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    int xr = 0;
+    // XOR of array elements
+    for (int i = 0; i < n; i++)
+    {
+        xr ^= a[i];
+    }
+    // XOR of numbers from 1 to n
+    for (int i = 1; i <= n; i++)
+    {
+        xr ^= i;
+    }
+    // rightmost set bit
+    int bit = xr & (-xr);
+    int x = 0, y = 0;
+    // divide array elements into two groups
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] & bit)
+            x ^= a[i];
+        else
+            y ^= a[i];
+    }
+    // divide numbers 1 to n into two groups
+    for (int i = 1; i <= n; i++)
+    {
+        if (i & bit)
+            x ^= i;
+        else
+            y ^= i;
+    }
+    // identify repeating and missing
+    int repeating, missing;
+    bool found = false;
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] == x)
+        {
+            repeating = x;
+            missing = y;
+            found = true;
+            break;
+        }
+    }
+    if (!found)
+    {
+        repeating = y;
+        missing = x;
+    }
+    cout << "Repeating number: " << repeating << "\n";
+    cout << "Missing number: " << missing << "\n";
+    return 0;
+}
