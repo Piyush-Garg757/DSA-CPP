@@ -46,6 +46,6 @@ int main()
     int index = it - arr.begin(); // convert iterator to index
 */
 
-// Aise hi we can dp upper bound in which we want largest index <x
+// Aise hi we can do upper bound in which we want max index >x
 
 // Inhi problems ko floor and ceil ke roop mein bhi de sakte hain in which ceil is smallest number such that a[idx]>=x which is basically lower bound and floor is largest number such that a[idx]<=x which can be done 
