@@ -47,3 +47,5 @@ int main()
 */
 
 // Aise hi we can dp upper bound in which we want largest index <x
+
+// Inhi problems ko floor and ceil ke roop mein bhi de sakte hain in which ceil is smallest number such that a[idx]>=x which is basically lower bound and floor is largest number such that a[idx]<=x which can be done 
