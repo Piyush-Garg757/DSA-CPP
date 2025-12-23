@@ -1,8 +1,5 @@
-/*Aisa min index return karna hai ek sorted array mein se such that a[idx]>=x*/
+/*ek array mein element kaha jayega insert karein to vo position nikalni hai which is nothing but lower bound */
 
-// brute -> iterating whole array
-
-// Optimal sol -> Binary search
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -36,14 +33,7 @@ int main()
             low = mid + 1;
         }
     }
-    cout << "Lower bound index of " << target << " is: " << ans << endl;
+    cout << ans << endl;
     return 0;
 }
 // TC - O(logn)  SC - O(1)
-/*
- // STL lower_bound returns iterator to first element >= target
-    auto it = lower_bound(arr.begin(), arr.end(), target);
-    int index = it - arr.begin(); // convert iterator to index
-*/
-
-// Aise hi we can dp upper bound
