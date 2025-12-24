@@ -42,7 +42,7 @@ public:
                 x++;
             else
             {
-                x = 0; // Reset x if consecutive pairs not being possible
+                x = 0;
                 continue;
             }
             if (x == k)
@@ -58,12 +58,13 @@ public:
         int n = a.size(), ans = -1;
         if (1LL * m * k > n)
             return -1;
-        int maxi = INT_MIN;
+        int maxi = INT_MIN, mini = INT_MAX;
         for (int i = 0; i < n; i++)
         {
             maxi = max(maxi, a[i]);
+            mini = min(mini, a[i]);
         }
-        int low = 1, high = maxi;
+        int low = mini, high = maxi;
         while (low <= high)
         {
             int mid = low + (high - low) / 2;
