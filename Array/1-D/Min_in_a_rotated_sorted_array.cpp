@@ -133,3 +133,6 @@ public:
     }
 };
 // TC - O(logn)  SC - O(1)
+
+
+// Pucha ho how many times the array has been rotated to uska answer min ka idx ata hai
