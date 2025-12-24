@@ -98,3 +98,38 @@ int main()
     return 0;
 }
 // TC - O(logn)  SC - O(1)
+
+// Duplicates
+
+class Solution
+{
+public:
+    int findMin(vector<int> &a)
+    {
+        int n = a.size();
+        int low = 0, high = n - 1;
+        int ans = a[0];
+        while (low <= high)
+        {
+            int mid = low + (high - low) / 2;
+            ans = min(ans, a[mid]);
+            if (a[low] == a[high])
+            {
+                low++;
+                high--;
+            }
+            else if (a[low] <= a[mid])
+            {
+                ans = min(ans, a[low]);
+                low = mid + 1;
+            }
+            else
+            {
+                ans = min(ans, a[mid]);
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
+};
+// TC - O(logn)  SC - O(1)
