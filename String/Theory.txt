@@ -1,0 +1,14 @@
+cin -> space tab aur enter ke baad ka input nahi lega to use getchar
+
+string ka last charecter hota hai null charecter -> '\0'
+
+🔸 string (C++ STL)
+string ek class hai 
+Automatically size manage karti hai
+Use karna easy & safe
+
+🔸 char array (C-style string)
+Characters ka fixed-size array
+End mein '\0' (null character) compulsory
+Manual handling karni padti hai
+
