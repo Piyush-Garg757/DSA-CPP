@@ -6,7 +6,7 @@ int *Pointer=&num
 cout<<*Pointer se num ki value ayegi 
 cout<<Pointer se address
 
-sizeof Pointer is 8
+sizeof Pointer is 8 for 64 bit system and 4 for 32 bit system
 
 int *q=Pointer ise karne se q bhi Pointer ki tarah hi kaam karne lagega
 
