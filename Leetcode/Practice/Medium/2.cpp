@@ -61,3 +61,5 @@ public:
     }
 };
 // TC - O(n)  SC - O(1)
+
+// Ismien dummy node lene se initialisatin vagera mein fayda rehta hai isiliye liya hai  to aage dhyaan rakhn agar alag hi linked list banani hai to dummy node leke karna
