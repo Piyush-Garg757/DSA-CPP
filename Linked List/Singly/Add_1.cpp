@@ -1,50 +1,50 @@
-// /* ek linked list mein 1 add karna hai */
+/* ek linked list mein 1 add karna hai */
 
-// // Brute force
+// Brute force
 
-// class Solution
-// {
-// public:
-//     ListNode *reverse(ListNode *head)
-//     {
-//         ListNode *prev = nullptr;
-//         while (head)
-//         {
-//             ListNode *nextNode = head->next;
-//             head->next = prev;
-//             prev = head;
-//             head = nextNode;
-//         }
-//         return prev;
-//     }
+class Solution
+{
+public:
+    ListNode *reverse(ListNode *head)
+    {
+        ListNode *prev = nullptr;
+        while (head)
+        {
+            ListNode *nextNode = head->next;
+            head->next = prev;
+            prev = head;
+            head = nextNode;
+        }
+        return prev;
+    }
 
-//     ListNode *addOne(ListNode *head)
-//     {
-//         head = reverse(head);
+    ListNode *addOne(ListNode *head)
+    {
+        head = reverse(head);
 
-//         ListNode *temp = head;
-//         int carry = 1;
+        ListNode *temp = head;
+        int carry = 1;
 
-//         while (temp && carry)
-//         {
-//             int sum = temp->val + carry;
-//             temp->val = sum % 10;
-//             carry = sum / 10;
+        while (temp && carry)
+        {
+            int sum = temp->val + carry;
+            temp->val = sum % 10;
+            carry = sum / 10;
 
-//             if (!temp->next && carry)
-//             {
-//                 temp->next = new ListNode(carry);
-//                 carry = 0;
-//             }
-//             temp = temp->next;
-//         }
+            if (!temp->next && carry)
+            {
+                temp->next = new ListNode(carry);
+                carry = 0;
+            }
+            temp = temp->next;
+        }
 
-//         return reverse(head);
-//     }
-// };
-// // TC - O(3*n)  SC - O(1)
+        return reverse(head);
+    }
+};
+// TC - O(3*n)  SC - O(1)
 
-// // Optimal sol -> using recurssion backtracking
+// Optimal sol -> using recurssion backtracking
 
 #include <iostream>
 using namespace std;
@@ -87,21 +87,30 @@ void printLinkedList(Node *head)
     cout << endl;
 }
 
-void add1(Node *head, int *carry)
+int helper(Node *temp)
 {
-    if (head->next == nullptr)
+    if (temp == nullptr)
+        return 1;
+    int carry = helper(temp->next);
+    temp->data += carry;
+    if (temp->data >= 10)
     {
-        head->data+=*carry;
-        if(head->data>10)
-        {
-            head->data=0;
-            *carry=1;
-        }
-        else *carry=0;
-        return;
+        temp->data = 0;
+        return 1;
     }
-    add1(head->next,*carry);
-    
+    return 0;
+}
+
+Node *add1(Node *head)
+{
+    int carry = helper(head);
+    if (carry)
+    {
+        Node *newnode = new Node(1);
+        newnode->next = head;
+        return newnode;
+    }
+    return head;
 }
 int main()
 {
@@ -109,7 +118,7 @@ int main()
     cout << "Enter size of array: ";
     cin >> n;
 
-    int arr[n], carry = 1;
+    int arr[n];
     cout << "Enter array elements: ";
     for (int i = 0; i < n; i++)
     {
@@ -119,8 +128,9 @@ int main()
     Node *head = createLinkedList(arr, n);
 
     cout << "Linked List: ";
-    add1(head, &carry);
+    head = add1(head);
     printLinkedList(head);
 
     return 0;
 }
+// TC - O(n)  SC - O(n)
