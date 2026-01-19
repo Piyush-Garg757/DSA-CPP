@@ -12,6 +12,9 @@ Input: head = [9,9,9]
 Output: [1,9,9,8]
 Explanation: The figure above corresponds to the given linked list which represents the number 999. Hence, the returned linked list reprersents the number 999 * 2 = 1998.*/
 
+// Normal zindagi - > revesre then solve then reverse again to submit
+
+// Mentos zindagi :
 /**
  * Definition for singly-linked list.
  * struct ListNode {
