@@ -74,7 +74,6 @@ Since (1 & 2) = 0 already exists in the set, nothing is inserted.
 No more operations can be performed.
 Minimum possible final score = 2*/
 
-// By observation
 #include <bits/stdc++.h>
 
 using namespace std;
