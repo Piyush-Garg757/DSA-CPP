@@ -61,3 +61,34 @@ int main()
     return 0;
 }
 // TC - O(n)  SC - O(1)
+
+/*Tere sequence ka structure aisa hai:
+
+Pehla number: x × y  
+Dusra number: y × z  
+Math ka ek rule hota hai:
+Agar do numbers mein koi common factor ho, toh use gcd ke bahar nikala ja sakta hai:
+gcd(x × y, y × z) = y × gcd(x, z)
+Ab tere logic mein:
+Pehla number = (2i - 1) × (2i + 1)  
+Dusra number = (2i + 1) × (2i + 3)  
+Dono numbers mein common factor hai: (2i + 1)
+Toh gcd banega:
+gcd((2i - 1)(2i + 1), (2i + 1)(2i + 3))
+= (2i + 1) × gcd(2i - 1, 2i + 3)
+
+Ab observe kar:
+(2i - 1) aur (2i + 3) dono odd numbers hain  
+Aur unka difference hai 4
+Do odd numbers jinke beech difference 4 ho:
+unka gcd hamesha 1 hota hai
+
+Example:
+gcd(5, 9) = 1  
+gcd(7, 11) = 1  
+
+Isliye:
+gcd(2i - 1, 2i + 3) = 1
+
+Final result:
+gcd = (2i + 1)*/
