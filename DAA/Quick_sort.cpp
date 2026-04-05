@@ -11,7 +11,7 @@ void quicksort(int a[], int low, int high)
         while (i <= high && a[i] <= pivot)
             i++;
 
-        while (a[j] > pivot)
+        while (j >= low && a[j] > pivot)
             j--;
 
         if (i >= j)
