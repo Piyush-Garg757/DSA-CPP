@@ -1,3 +1,4 @@
+https://codeforces.com/problemset/problem/1814/A
 /*Coins
 
 In Berland, there are two types of coins, having denominations of 2 and k burles.
