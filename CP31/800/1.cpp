@@ -17,7 +17,7 @@ First line contains t (number of test cases)
 For each test case:
 * First line contains n (2 ≤ n ≤ 1000)
 * Second line contains n integers: a1, a2, ..., an
-  where each ai is either 1 or 2
+ where each ai is either 1 or 2
 
 ---
 
