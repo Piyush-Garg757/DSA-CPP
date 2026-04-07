@@ -1,3 +1,4 @@
+https://codeforces.com/problemset/problem/1805/A
 /*We Need the Zero
 
 There is an array a consisting of non-negative integers. You can choose an integer x and denote b_i = a_i ⊕ x for all 1 ≤ i ≤ n, where ⊕ denotes the bitwise XOR operation. Is it possible to choose such a number x that the value of the expression b₁ ⊕ b₂ ⊕ … ⊕ bₙ equals 0?
