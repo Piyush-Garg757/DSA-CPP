@@ -1,5 +1,5 @@
 https://codeforces.com/problemset/problem/1788/A
-/*A. One and Twoytes
+/*A. One and Two
 
 You are given a sequence a1, a2, ..., an. Each element of the sequence is either 1 or 2.
 Find if there exists an integer k such that:
