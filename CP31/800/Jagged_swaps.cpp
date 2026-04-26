@@ -153,4 +153,4 @@ Ab magic yaha hai 👇
 
 Intuition:
 1 already correct relative position pe hai
-Ab baaki numbers (2...n) ko sort karna hai*/
+Ab baaki numbers (2...n) ko sort karna hai_*/
