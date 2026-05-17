@@ -49,3 +49,21 @@ public:
     }
 };
 // TC - O(logn)  SC - O(1)
+
+// Another approach which came to my mind on 2nd try 
+class Solution {
+public:
+    int findMin(vector<int>& a) {
+        int n = a.size();
+        int low = 0, high = n - 1;
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            if (a[mid] >= a[0]) {
+                low = mid + 1;
+            } else
+                high = mid;
+        }
+        return min(a[0], a[low]);
+    }
+};
+// TC - O(logn)  SC - O(1)
